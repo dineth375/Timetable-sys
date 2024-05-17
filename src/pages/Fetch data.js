@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { getAbsentTeachers } from './firebaseFunctions';
+import { getAbsentTeachers, addAbsentTeachers } from './firebaseFunctions';
 
 export default function Homef() {
     const [absentTeachers, setAbsentTeachers] = useState([]);
 
     useEffect(() => {
         async function fetchAbsentTeachers() {
+            await addAbsentTeachers(); // Ensure this is run to update the Absent Teachers collection
             const absentTeachersData = await getAbsentTeachers();
             setAbsentTeachers(absentTeachersData);
         }
