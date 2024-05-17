@@ -1,4 +1,4 @@
-import { collection, getDocs, setDoc, doc, query, where } from 'firebase/firestore';
+import { collection, getDocs, setDoc, doc} from 'firebase/firestore';
 import { firestore } from "../firebase";
 
 export async function getTeachersInPresentTeachers() {
